@@ -8,7 +8,7 @@ class Node:
 
 class Solution:
     def reverse(self, head):
-        st=[]
+        """st=[]
         temp=head
         while temp!=None:
             st.append(temp.data)
@@ -17,6 +17,14 @@ class Solution:
         while temp!=None:
             temp.data=st.pop()
             temp=temp.next
+        return head"""
+        
+        curr=head
+        while curr:
+            curr.next,curr.prev=curr.prev,curr.next
+            if curr.prev is None:
+                head=curr
+            curr=curr.prev
         return head
         
         
