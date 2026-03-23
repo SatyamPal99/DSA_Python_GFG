@@ -8,7 +8,7 @@ class Node:
 
 class Solution:
     def addOne(self,head):
-        head1=self.reverse(head)
+        """head1=self.reverse(head)
         carry=1
         curr=head1
         while curr:
@@ -42,6 +42,36 @@ class Solution:
             temp.next=pre
             pre=temp
             temp=curr
-        return pre
+        return pre"""
+        
+    # Optimized Approach using Recursion
+        carry=1
+        ans=self.fun(head)
+        if ans==1:
+            new=Node(1)
+            new.next=head
+            return new
+        return head
+        
+    def fun(self,head):
+        if head==None:
+            return 1
+        
+        
+        carry=self.fun(head.next)
+        sum=carry+head.data
+        if sum<10:
+            head.data=sum
+            return 0
+        else:
+            head.data=0
+            return 1
+        return head
+            
+    
+    
+    
+    
+    
             
             
