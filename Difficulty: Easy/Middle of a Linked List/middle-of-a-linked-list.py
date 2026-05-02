@@ -7,15 +7,9 @@ class node:
 
 class Solution:
     def getMiddle(self, head):
+        temp=head
         count=0
-        curr=head
-        while curr:
+        while temp!=None:
             count+=1
-            curr=curr.next
-        mid=(count//2)+1
-        curr=head
-        while mid-1:
-            curr=curr.next
-            mid-=1
-        return curr.data
-            
+            temp=temp.next
+        return arr[count//2]
