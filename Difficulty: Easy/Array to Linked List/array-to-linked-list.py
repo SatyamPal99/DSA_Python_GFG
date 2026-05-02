@@ -8,12 +8,13 @@ class Node:
 
 class Solution:
     def arrayToList(self, arr):
+        n=len(arr)
         head=Node(arr[0])
-        mover=head
-        for i in range(1, len(arr)):
-            temp=Node(arr[i])
-            mover.next=temp
-            mover=temp
+        temp=head
+        for i in range(1,n):
+            new=Node(arr[i])
+            temp.next=new
+            temp=new
         return head
-        
+            
         
