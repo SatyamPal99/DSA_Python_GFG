@@ -7,7 +7,7 @@ class Node:
 
 class Solution:
     def lengthOfLoop(self, head):
-        d={}
+        """d={}
         temp=head
         count=0
         while temp!=None:
@@ -17,5 +17,29 @@ class Solution:
                 d[temp]=count
                 count+=1
                 temp=temp.next
+        return 0"""
+        
+        #optimized approach 
+        
+        slow=fast=head
+        while(fast!=None and fast.next!=None):
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                return self.find_num(slow, fast)
         return 0
+        
+    def find_num(self,slow,fast):
+        count=1
+        fast=fast.next
+        while fast!=slow:
+            count+=1
+            fast=fast.next
+        return count
+        
+        
+        
+        
+        
+        
             
