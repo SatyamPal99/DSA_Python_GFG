@@ -12,7 +12,7 @@ class Solution:
     # Return a list containing the post order traversal of the given tree
     def postOrder(self,node):
         # Using two stack
-        st1=[node]
+        """st1=[node]
         st2=[]
         while st1:
             temp=st1.pop()
@@ -21,4 +21,25 @@ class Solution:
                 st1.append(temp.left)
             if temp.right!=None:
                 st1.append(temp.right)
-        return st2[::-1]
+        return st2[::-1]"""
+        
+        # using reverse of postoreder [left right root] --> [root,left,right] 
+        
+        st=[root]
+        ans=[]
+        while st:
+            temp=st.pop()
+            ans.append(temp.data)
+            if temp.left!=None:
+                st.append(temp.left)
+            if temp.right!=None:
+                st.append(temp.right)
+            
+        return ans[::-1]
+            
+        
+        
+        
+        
+        
+        
