@@ -14,9 +14,11 @@ class Solution:
         while st:
             temp=st.pop()
             ans.append(temp.data)
-            if temp.right!=None:
+            if temp.right:
                 st.append(temp.right)
-            if temp.left!=None:
+            if temp.left:
                 st.append(temp.left)
         return ans
             
+            
+        
