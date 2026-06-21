@@ -9,9 +9,12 @@ from collections import defaultdict,deque
 class Solution:
     def topView(self, root):
         mapp={}
-        q=deque([(root,0)])
+        q=deque()
+        q.append((root,0))
         while q:
-            node,x=q.popleft()
+            temp=q.popleft()
+            node=temp[0]
+            x=temp[1]
             if x not in mapp:
                 mapp[x]=node.data
             if node.left:
