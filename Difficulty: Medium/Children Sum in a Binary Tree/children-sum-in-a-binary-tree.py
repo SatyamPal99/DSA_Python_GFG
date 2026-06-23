@@ -9,7 +9,7 @@ class Node:
 
 class Solution:
     def isSumProperty(self, root):
-        q=deque()
+        """q=deque()
         q.append(root)
         while q:
             temp=q.popleft()
@@ -26,7 +26,28 @@ class Solution:
                 q.append(temp.left)
             if temp.right:
                 q.append(temp.right)
-        return True
+        return True"""
+        
+        #using Recursion(od DFS)
+        
+        value,ans=self.fun(root)
+        return ans
+        
+    def fun(self,root):
+        if root==None:
+            return 0,1
+        if root.left==None and root.right==None:
+            return root.data,1
+        
+        left,isL=self.fun(root.left)
+        right,isR=self.fun(root.right)
+        if left+right==root.data:
+            if isL and isR:
+                return root.data,1
+        return root.data,0
+        
+        
+        
                     
                     
                     
