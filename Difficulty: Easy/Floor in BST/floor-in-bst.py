@@ -15,9 +15,10 @@ class Solution:
                 return root.data
             if root.data<k:
                 ans=root.data
-            if root.data<k:
                 root=root.right
             else:
                 root=root.left
+            
         return ans
+        
         
