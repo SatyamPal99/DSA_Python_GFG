@@ -1,13 +1,13 @@
 class Solution:
     def cntSubarrays(self, arr, k):
-        maxlen=0
+        count=0
         summ=0
         mapp={}
-        for i in arr:
-            summ=summ+i
+        for i in range(len(arr)):
+            summ=summ+arr[i]
             if summ==k:
-                maxlen+=1
+                count+=1
             if summ-k in mapp:
-                maxlen=maxlen+mapp[summ-k]
+                count=count+mapp[summ-k]
             mapp[summ]=mapp.get(summ,0)+1
-        return maxlen
+        return count
