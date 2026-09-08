@@ -51,11 +51,10 @@ class Solution:
             ds.union_by_size(rowNode,colNode)
             node_set.add(rowNode)
             node_set.add(colNode)
-        
+
         components=0
         for node in node_set:
             if ds.find_set(node)==node:
                 components+=1
         return n-components
-            
-        
+
